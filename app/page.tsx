@@ -1,3 +1,4 @@
+import WhatsAppButton from "@/components/WhatsAppButton";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0B0B0B] text-white">
@@ -384,6 +385,7 @@ export default function Home() {
   </div>
 
 </footer>
+<WhatsAppButton />
     </main>
   );
 }
