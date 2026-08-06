@@ -1,20 +1,32 @@
+"use client";
+import AuroraBackground from "@/components/AuroraBackground";
+import CustomCursor from "@/components/CustomCursor";
+import { useState } from "react";
 import WhatsAppButton from "@/components/WhatsAppButton";
+
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <main className="min-h-screen bg-[#0B0B0B] text-white">
+      <div className="absolute top-20 left-20 h-40 w-40 rounded-full bg-red-500 z-20"></div>
       {/* Hero Section */}
-      <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#111111] to-[#1a1a1a]" />
+      <section
+  id="home"
+  className="relative flex min-h-screen items-center justify-center overflow-hidden pt-28 md:pt-0"
+>
+        {/* Background */}        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#111111] to-[#1a1a1a]" />
+        
 
         {/* Gold Glow */}
         <div className="absolute -top-40 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-yellow-500/10 blur-[160px]" />
+          <div className="absolute top-10 left-10 h-80 w-80 rounded-full bg-yellow-500/10 blur-[140px] orb1"></div>
 
+<div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-yellow-400/10 blur-[160px] orb2"></div>
         {/* Navbar */}
-        <header className="absolute top-0 left-0 z-20 w-full">
+        <header className="fixed top-0 left-0 z-50 w-full border-b border-yellow-500/10 bg-black/30 backdrop-blur-xl transition-all duration-300">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-8">
 
-            <div>
+            <div className="cursor-pointer transition-transform duration-300 hover:scale-105">
               <h2 className="text-xl font-bold tracking-[0.35em] text-yellow-500">
                 NIHARIKA SINGH
               </h2>
@@ -33,7 +45,10 @@ export default function Home() {
                 Practice Areas
               </a>
 
-              <a href="#about" className="hover:text-yellow-500">
+              <a
+                href="#about"
+                className="relative transition-colors duration-300 hover:text-yellow-500 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-yellow-500 after:transition-all after:duration-300 hover:after:w-full"
+              >
                 About
               </a>
 
@@ -56,15 +71,32 @@ export default function Home() {
               Consultation
             </a>
 
-            <button className="rounded-lg border border-white/20 px-4 py-2 text-xl md:hidden">
-              ☰
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="rounded-lg border border-white/20 px-4 py-2 text-xl md:hidden"
+            >
+              {menuOpen ? "✕" : "☰"}
             </button>
 
             </div>
 
           </div>
         </header>
+        {menuOpen && (
+        <div className="fixed top-20 left-4 right-4 z-50 rounded-2xl border border-white/10 bg-black/95 p-6 md:hidden">
+          <nav className="flex flex-col gap-6 text-lg">
 
+            <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
+
+            <a href="#practice" onClick={() => setMenuOpen(false)}>Practice Areas</a>
+
+            <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+
+            <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+
+          </nav>
+        </div>
+      )}
         {/* Hero Content */}
         <div className="relative z-10 max-w-5xl px-6 text-center">
 
@@ -72,7 +104,7 @@ export default function Home() {
             Premium Legal Services
           </p>
 
-          <h1 className="animate-fade-in-up text-6xl font-bold leading-tight md:text-8xl">
+          <h1 className="animate-fade-in-up text-6xl font-black leading-tight tracking-tight md:text-8xl bg-gradient-to-b from-white via-yellow-100 to-yellow-500 bg-clip-text text-transparent">
             Legal Excellence.
             <br />
             Strategic Counsel.
@@ -88,7 +120,7 @@ export default function Home() {
 
             <a
               href="#contact"
-              className="rounded-full bg-yellow-500 px-8 py-4 font-semibold text-black transition hover:scale-105"
+              className="rounded-full bg-yellow-500 px-8 py-4 font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(234,179,8,0.45)]"
 >
               Book Consultation
             </a>
@@ -118,6 +150,7 @@ export default function Home() {
 
           <h2 className="text-5xl font-bold">
             Legal Services
+            <div className="mt-5 h-1 w-24 rounded-full bg-yellow-500"></div>
             <br />
             Tailored For You
           </h2>
@@ -130,7 +163,9 @@ export default function Home() {
 
           <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition duration-300 hover:-translate-y-2 hover:border-yellow-500">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3">
+            <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>
+            <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
               <h3 className="mb-4 text-2xl font-semibold">Corporate Law</h3>
               <p className="text-gray-400">
                 Business formation, governance, mergers, acquisitions,
@@ -138,7 +173,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition duration-300 hover:-translate-y-2 hover:border-yellow-500">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3">
+            <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>
+            <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
               <h3 className="mb-4 text-2xl font-semibold">Civil Litigation</h3>
               <p className="text-gray-400">
                 Effective representation in civil disputes with a focus on
@@ -146,7 +183,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition duration-300 hover:-translate-y-2 hover:border-yellow-500">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3">
+            <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>
+            <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
               <h3 className="mb-4 text-2xl font-semibold">Real Estate</h3>
               <p className="text-gray-400">
                 Property transactions, due diligence, documentation and
@@ -154,24 +193,30 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition duration-300 hover:-translate-y-2 hover:border-yellow-500">
-              <h3 className="mb-4 text-2xl font-semibold">Intellectual Property</h3>
+        <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3"> 
+        <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>   
+        <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
+                  <h3 className="mb-4 text-2xl font-semibold">Intellectual Property</h3>
               <p className="text-gray-400">
                 Trademark, copyright and brand protection for businesses
                 and creators.
               </p>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition duration-300 hover:-translate-y-2 hover:border-yellow-500">
-              <h3 className="mb-4 text-2xl font-semibold">Employment Law</h3>
+          <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3"> 
+          <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div> 
+          <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
+                      <h3 className="mb-4 text-2xl font-semibold">Employment Law</h3>
               <p className="text-gray-400">
                 Employment contracts, workplace policies and dispute
                 resolution for employers and employees.
               </p>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 transition duration-300 hover:-translate-y-2 hover:border-yellow-500">
-              <h3 className="mb-4 text-2xl font-semibold">Startup Advisory</h3>
+        <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3">  
+        <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>  
+        <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
+                  <h3 className="mb-4 text-2xl font-semibold">Startup Advisory</h3>
               <p className="text-gray-400">
                 Legal guidance for founders from incorporation to investment
                 and growth.
@@ -232,7 +277,7 @@ export default function Home() {
               <img
   src="https://media.discordapp.net/attachments/1456295896550609073/1534627417870831768/cd7dca87-29c6-4f76-9376-09788c26195e.png?ex=6a74d0a8&is=6a737f28&hm=6605eb9e0ace5c4610f8e36d43346544fe3ea2e7284e94ab2ef5b32ee6910ff4&=&format=webp&quality=lossless&width=768&height=1024"
   alt="Founder"
-  className="h-[500px] w-full max-w-md rounded-[40px] object-cover"
+  className="h-[500px] w-full max-w-md rounded-[40px] object-cover transition duration-700 hover:scale-105"
 />
 
               
@@ -270,7 +315,7 @@ export default function Home() {
 
       {/* Contact Info */}
 
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+   <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
 
         <h3 className="text-2xl font-semibold">
           Get In Touch
@@ -285,7 +330,7 @@ export default function Home() {
   href="tel:+919876543210"
   className="text-gray-400 hover:text-yellow-500"
 >
-  Phone: +91 98765 43210
+  Phone: +91 7399 899 994
 </a>
         </p>
 
@@ -298,7 +343,7 @@ export default function Home() {
 
       {/* Form */}
 
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+      <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
 
                 <form
           action="https://formspree.io/f/mnpaqznv"
@@ -385,6 +430,7 @@ export default function Home() {
   </div>
 
 </footer>
+<CustomCursor />
 <WhatsAppButton />
     </main>
   );

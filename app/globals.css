@@ -49,3 +49,39 @@ button{
   z-index: 1000;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
+@media (min-width: 768px) {
+  * {
+    cursor: none;
+  }
+}
+.orb1 {
+  animation: orb1 12s ease-in-out infinite;
+}
+
+.orb2 {
+  animation: orb2 15s ease-in-out infinite;
+}
+
+@keyframes orb1 {
+  0% {
+    transform: translate(0,0);
+  }
+  50% {
+    transform: translate(40px,-30px);
+  }
+  100% {
+    transform: translate(0,0);
+  }
+}
+
+@keyframes orb2 {
+  0% {
+    transform: translate(0,0);
+  }
+  50% {
+    transform: translate(-50px,30px);
+  }
+  100% {
+    transform: translate(0,0);
+  }
+}
