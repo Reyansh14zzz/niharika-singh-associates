@@ -8,7 +8,6 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <main className="min-h-screen bg-[#0B0B0B] text-white">
-      <div className="absolute top-20 left-20 h-40 w-40 rounded-full bg-red-500 z-20"></div>
       {/* Hero Section */}
       <section
   id="home"
@@ -19,9 +18,7 @@ export default function Home() {
 
         {/* Gold Glow */}
         <div className="absolute -top-40 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-yellow-500/10 blur-[160px]" />
-          <div className="absolute top-10 left-10 h-80 w-80 rounded-full bg-yellow-500/10 blur-[140px] orb1"></div>
-
-<div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-yellow-400/10 blur-[160px] orb2"></div>
+  
         {/* Navbar */}
         <header className="fixed top-0 left-0 z-50 w-full border-b border-yellow-500/10 bg-black/30 backdrop-blur-xl transition-all duration-300">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-8">
