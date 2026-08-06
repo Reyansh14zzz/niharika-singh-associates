@@ -163,7 +163,7 @@ export default function Home() {
           </p>
 
           <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <RevealCard delay={0.1}>
+            <RevealCard delay={0.05}>
 
             <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3">
             <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>
@@ -176,7 +176,7 @@ export default function Home() {
               </p>
             </div>
             </RevealCard>
-            <RevealCard delay={0.2}>
+            <RevealCard delay={0.1}>
             <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3">
             <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>
             <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
@@ -187,7 +187,7 @@ export default function Home() {
               </p>
             </div>
             </RevealCard>
-            <RevealCard delay={0.3}>
+            <RevealCard delay={0.15}>
             <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3">
             <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>
             <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
@@ -198,7 +198,7 @@ export default function Home() {
               </p>
             </div>
             </RevealCard>
-            <RevealCard delay={0.4}>
+            <RevealCard delay={0.2}>
 
         <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3"> 
         <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>   
@@ -210,7 +210,7 @@ export default function Home() {
               </p>
             </div>
           </RevealCard>
-          <RevealCard delay={0.5}>
+          <RevealCard delay={0.25}>
           <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3"> 
           <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div> 
           <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
@@ -221,7 +221,7 @@ export default function Home() {
               </p>
             </div>
           </RevealCard>
-          <RevealCard delay={0.6}>
+          <RevealCard delay={0.3}>
         <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3">  
         <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>  
         <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>

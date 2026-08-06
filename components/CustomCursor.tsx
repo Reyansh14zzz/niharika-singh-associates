@@ -26,8 +26,8 @@ export default function CustomCursor() {
     >
       <div
 style={{
-  width: "30px",
-  height: "30px",
+  width: "10px",
+  height: "20px",
   background: "#f8f5e9",
   border: "2px solid #EAB308",
   clipPath:
