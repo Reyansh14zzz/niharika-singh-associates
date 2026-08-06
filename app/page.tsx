@@ -1,4 +1,6 @@
 "use client";
+import RevealCard from "@/components/RevealCard";
+import Reveal from "@/components/Reveal";
 import AuroraBackground from "@/components/AuroraBackground";
 import CustomCursor from "@/components/CustomCursor";
 import { useState } from "react";
@@ -9,9 +11,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0B0B0B] text-white">
       {/* Hero Section */}
-      <section
-  id="home"
-  className="relative flex min-h-screen items-center justify-center overflow-hidden pt-28 md:pt-0"
+      <Reveal>
+<section
+ id="home"
+ className="relative flex min-h-screen items-center justify-center overflow-hidden pt-28 md:pt-0"
 >
         {/* Background */}        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#111111] to-[#1a1a1a]" />
         
@@ -132,12 +135,13 @@ export default function Home() {
           </div>
 
         </div>
-
+            
             </section>
+            </Reveal>
 
       {/* Practice Areas */}
-
-      <section id="practice" className="bg-[#0b0b0b] py-24">
+        <Reveal>
+        <section id="practice" className="bg-[#0b0b0b] py-24">
 
         <div className="mx-auto max-w-7xl px-8">
 
@@ -159,9 +163,11 @@ export default function Home() {
           </p>
 
           <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <RevealCard delay={0.1}>
 
             <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3">
             <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>
+            
             <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
               <h3 className="mb-4 text-2xl font-semibold">Corporate Law</h3>
               <p className="text-gray-400">
@@ -169,7 +175,8 @@ export default function Home() {
                 contracts and corporate compliance.
               </p>
             </div>
-
+            </RevealCard>
+            <RevealCard delay={0.2}>
             <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3">
             <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>
             <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
@@ -179,7 +186,8 @@ export default function Home() {
                 strategic and practical outcomes.
               </p>
             </div>
-
+            </RevealCard>
+            <RevealCard delay={0.3}>
             <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3">
             <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>
             <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
@@ -189,6 +197,8 @@ export default function Home() {
                 dispute resolution.
               </p>
             </div>
+            </RevealCard>
+            <RevealCard delay={0.4}>
 
         <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3"> 
         <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>   
@@ -199,7 +209,8 @@ export default function Home() {
                 and creators.
               </p>
             </div>
-
+          </RevealCard>
+          <RevealCard delay={0.5}>
           <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3"> 
           <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div> 
           <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
@@ -209,7 +220,8 @@ export default function Home() {
                 resolution for employers and employees.
               </p>
             </div>
-
+          </RevealCard>
+          <RevealCard delay={0.6}>
         <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:-translate-y-3">  
         <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-yellow-500/80 group-hover:shadow-[0_0_35px_rgba(234,179,8,0.25)] transition-all duration-500"></div>  
         <div className="absolute -left-40 top-0 h-full w-20 rotate-12 bg-white/10 blur-xl transition-all duration-700 group-hover:left-[120%]"></div>
@@ -219,15 +231,17 @@ export default function Home() {
                 and growth.
               </p>
             </div>
-
+          </RevealCard>
           </div>
 
         </div>
-
+      
            </section>
 
-      {/* About Section */}
+      </Reveal>
 
+      {/* About Section */}
+      <Reveal>
       <section id="about" className="bg-[#111111] py-28">
 
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-8 md:grid-cols-2">
@@ -286,8 +300,9 @@ export default function Home() {
         </div>
 
       </section>
+    </Reveal>
 {/* Contact Section */}
-
+<Reveal>
 <section id="contact" className="bg-[#111111] py-28">
 
   <div className="mx-auto max-w-7xl px-8">
@@ -386,6 +401,7 @@ export default function Home() {
   </div>
 
 </section>
+</Reveal>
 {/* Footer */}
 
 <footer className="border-t border-white/10 bg-[#050505] py-10">
