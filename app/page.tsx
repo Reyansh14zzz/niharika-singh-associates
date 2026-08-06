@@ -1,4 +1,6 @@
 "use client";
+
+import toast from "react-hot-toast";
 import RevealCard from "@/components/RevealCard";
 import Reveal from "@/components/Reveal";
 import AuroraBackground from "@/components/AuroraBackground";
@@ -8,8 +10,38 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const data = new FormData(form);
+
+  const response = await fetch("https://formspree.io/f/mnpaqznv", {
+    method: "POST",
+    body: data,
+    headers: {
+      Accept: "application/json",
+    },
+  });
+
+  if (response.ok) {
+    toast.success("Message sent successfully!", {
+      style: {
+        background: "#111",
+        color: "#fff",
+        border: "1px solid #EAB308",
+      },
+    });
+
+    form.reset();
+  } else {
+    toast.error("Something went wrong.");
+  }
+};
+
   return (
     <main className="min-h-screen bg-[#0B0B0B] text-white">
+      
       {/* Hero Section */}
       <Reveal>
 <section
@@ -357,10 +389,8 @@ export default function Home() {
 
       <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
 
-                <form
-          action="https://formspree.io/f/mnpaqznv"
-          method="POST"
-        >
+             <form onSubmit={handleSubmit}>
+          
 
           <input
             type="text"
